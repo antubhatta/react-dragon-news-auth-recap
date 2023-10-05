@@ -1,10 +1,9 @@
 
-import Navbar from "../Shared/Navbar/Navbar";
-import { Link } from "react-router-dom";
+import Navbar from '../Shared/Navbar/Navbar';
+import { Link } from 'react-router-dom';
 
-
-const Login = () => {
-    const handleLogin=e=>{
+const Register = () => {
+    const handleRegister=e=>{
         e.preventDefault()
         // const email=e.target.email.value;
         // const password=e.target.password.value;
@@ -14,12 +13,26 @@ const Login = () => {
        console.log(form.get('password'))
     }
     return (
-        <div className="">
+        <div>
             <Navbar></Navbar>
-           <div>
-           <h3 className="text-3xl font-semibold text-center mt-10 space-y-8">Please Login</h3>
+            <div>
+           <h3 className="text-3xl font-semibold text-center mt-10 space-y-8">Register your account</h3>
 
-           <form onSubmit={handleLogin} className=" mx-auto  md:w-3/4 lg:w-1/2">
+           <form onSubmit={handleRegister} className=" mx-auto  md:w-3/4 lg:w-1/2">
+
+           <div className="form-control">
+<label className="label">
+<span className="label-text">Your Name</span>
+</label>
+<input type="text" name="name" required placeholder="Enter your name" className="input input-bordered"/>
+</div>
+<div className="form-control">
+<label className="label">
+<span className="label-text">Photo URL</span>
+</label>
+<input type="text" name="photo" required placeholder="Enter your Photo URL" className="input input-bordered"/>
+</div>
+
 <div className="form-control">
 <label className="label">
 <span className="label-text">Email</span>
@@ -39,7 +52,7 @@ const Login = () => {
 <button className="btn btn-primary">Login</button>
 </div>
 </form>
-<p className="text-[#706F6F]  mt-7 mb-20 text-center text-base font-semibold">Dont’t Have An Account ? <Link className="text-red-600" to="/register">Register</Link></p>
+<p className="text-[#706F6F]  mt-7 mb-20 text-center text-base font-semibold">Already Have An Account ? <Link className="text-red-600" to="/login">Login</Link></p>
 
 
            </div>
@@ -47,4 +60,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
